@@ -229,7 +229,7 @@ class Program
 このサンプルでは、辞書のコストファクター800の逆数÷2を指定していますが、どんな値が良いかを知るには試行錯誤が必要です。
 
 - 補足
- - 日本語の性質上、形態素解析の正解は一意でなく曖昧なケースがあります。またもちろん形態素解析エンジンの精度の限界もあります。そのために考案された手法がソフトわかち書きです。検索エンジンのインデクシングや将来のNLPなどに応用ができるはずです。
+  - 日本語の性質上、形態素解析の正解は一意でなく曖昧なケースがあります。またもちろん形態素解析エンジンの精度の限界もあります。そのために考案された手法がソフトわかち書きです。検索エンジンのインデクシングや将来のNLPなどに応用ができるはずです。
 
 ```csharp
 using System;
@@ -244,7 +244,7 @@ class Program
         {
             var theta = 1f / 800f / 2f; // 温度パラメータ
             var nodes = tagger.ParseSoftWakachi("本部長", theta); // ソフトわかち書き解を取得
-            foreach (var node in nodes.Where(n => n.Prob > 0.1)) // 周辺確率0.1以上の形態素ノードだけを処理
+            foreach (var node in nodes.Where(n => n.Prob > 0.1f)) // 周辺確率0.1以上の形態素ノードだけを処理
             {
                 Console.WriteLine("表層系　：" + node.Surface);
                 Console.WriteLine("読み　　：" + node.Reading);
