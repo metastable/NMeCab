@@ -21,7 +21,7 @@ class Program
     {
         using (var tagger = NMeCabIpaDic.CreateTagger()) // Taggerインスタンスを生成
         {
-            var nodes = tagger.ParseSoftWakachi("皇帝の新しい心"); // 形態素解析を実行
+            var nodes = tagger.Parse("皇帝の新しい心"); // 形態素解析を実行
             foreach (var node in nodes) // 形態素ノード配列を順に処理
             {
                 Console.WriteLine($"表層系：{node.Surface}");
@@ -91,7 +91,7 @@ class Program
         {
             var theta = 1f / 800f / 2f; // 温度パラメータ
             var nodes = tagger.ParseSoftWakachi("本部長", theta); // ソフトわかち解を取得
-            foreach (var node in nodes.Where(n => n.Prob > 0.1)) // 周辺確率0.1以上の形態素ノードを処理
+            foreach (var node in nodes.Where(n => n.Prob > 0.1)) // 周辺確率＞0.1の形態素ノードだけを処理
             {
                 Console.WriteLine("表層系　：" + node.Surface);
                 Console.WriteLine("読み　　：" + node.Reading);
