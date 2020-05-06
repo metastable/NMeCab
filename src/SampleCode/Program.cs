@@ -24,9 +24,9 @@ class Program
             var nodes = tagger.ParseSoftWakachi("皇帝の新しい心"); // 形態素解析を実行
             foreach (var node in nodes) // 形態素ノード配列を順に処理
             {
-                Console.WriteLine($"表層系　：{node.Surface}");
-                Console.WriteLine($"読み　　：{node.Reading}");
-                Console.WriteLine($"品詞　　：{node.PartsOfSpeech}");
+                Console.WriteLine($"表層系：{node.Surface}");
+                Console.WriteLine($"読み　：{node.Reading}");
+                Console.WriteLine($"品詞　：{node.PartsOfSpeech}");
                 Console.WriteLine();
             }
         }
@@ -57,9 +57,9 @@ class Program
             var nodes = tagger.Parse("皇帝の新しい心"); // 形態素解析を実行
             foreach (var node in nodes) // 形態素ノード配列を順に処理
             {
-                Console.WriteLine($"表層系　：{node.Surface}");
-                Console.WriteLine($"読み　　：{node.Reading}"); // 個別の素性
-                Console.WriteLine($"品詞　　：{node.PartsOfSpeech}"); // 〃
+                Console.WriteLine($"表層系：{node.Surface}");
+                Console.WriteLine($"読み　：{node.Reading}"); // 個別の素性
+                Console.WriteLine($"品詞　：{node.PartsOfSpeech}"); // 〃
                 Console.WriteLine();
             }
         }
