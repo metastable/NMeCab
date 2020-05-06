@@ -245,7 +245,7 @@ class Program
         {
             var theta = 1f / 800f / 2f; // 温度パラメータ
             var nodes = tagger.ParseSoftWakachi("本部長", theta); // ソフトわかち書き解を取得
-            foreach (var node in nodes.Where(n => n.Prob > 0.1f)) // 周辺確率0.1以上の形態素ノードだけを処理
+            foreach (var node in nodes.Where(n => n.Prob > 0.1f)) // 周辺確率＞0.1の形態素ノードだけを処理
             {
                 Console.WriteLine("表層系　：" + node.Surface);
                 Console.WriteLine("読み　　：" + node.Reading);
